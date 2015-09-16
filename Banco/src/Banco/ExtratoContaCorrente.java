@@ -2,7 +2,7 @@ package Banco;
 
 public class ExtratoContaCorrente {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficienteException {
 
 		// Cria uma instância de ContaService onde está presente as operações para Objeto Conta
 		ContaService operacoesConta = new ContaService();

@@ -9,6 +9,10 @@ public class Cliente extends Pessoa {
 	public Cliente() {
 
 	}
+	
+	public Cliente(String nome){
+		super(nome);
+	}
 
 	public Cliente( String nome, String cpf ) {
 

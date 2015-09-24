@@ -1,4 +1,4 @@
-package Banco;
+package banco;
 
 public class ExtratoContaCorrente {
 
@@ -7,9 +7,11 @@ public class ExtratoContaCorrente {
 		// Cria uma instância de ContaService onde está presente as operações para Objeto Conta
 		ContaService operacoesConta = new ContaService();
 
-		Conta correntista1 = new Conta("Aluno", 1001);
+		Cliente cliente1 = new Cliente("Aluno");
+		Cliente cliente2 = new Cliente("Aluna");
 
-		Conta correntista2 = new Conta("Professor", 2002);
+		Conta correntista1 = new Conta(cliente1, 1001);
+		Conta correntista2 = new Conta(cliente2, 21);
 
 		// faz deposito
 		operacoesConta.depositar(correntista1, 1000);

@@ -1,4 +1,4 @@
-package Banco;
+package banco;
 
 public class Cliente extends Pessoa {
 
@@ -46,6 +46,11 @@ public class Cliente extends Pessoa {
 
 		System.out.println("Nome do cliente é : " + getNome() + " Nº CPF: " + cpf + " Seu endereco :" + getEndereco());
 
+	}
+	
+	@Override
+	public String toString(){
+		return getNome();
 	}
 
 }

@@ -1,4 +1,4 @@
-package Banco;
+package banco;
 
 import java.util.Calendar;
 import java.util.Date;

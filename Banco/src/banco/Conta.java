@@ -1,4 +1,4 @@
-package Banco;
+package banco;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -98,6 +98,28 @@ public class Conta extends EntidadeBanco {
 	public void setMovimento(ArrayList movimento) {
 
 		this.movimento = movimento;
+	}
+	
+	@Override 
+	public boolean equals(Object objeto){
+		boolean resultado = false;
+		if((objeto != null) && (objeto instanceof Conta)){
+			Conta c = (Conta) objeto;
+			if (getNumero() == c.getNumero()){
+				resultado = true;
+			}
+		}
+		return resultado;
+	}
+	
+	@Override
+	public int hashCode(){
+		return getNumero();
+	}
+	
+	@Override
+	public String toString(){
+		return getNumero() + " " + getTitular().getNome();
 	}
 
 }

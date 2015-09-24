@@ -1,4 +1,7 @@
-package Banco;
+package teste;
+
+import banco.Cliente;
+import banco.Pessoa;
 
 public class TesteHeranca {
 

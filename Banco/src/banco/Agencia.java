@@ -1,7 +1,7 @@
 package banco;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 public class Agencia extends EntidadeBanco {
 	
@@ -13,7 +13,12 @@ public class Agencia extends EntidadeBanco {
 	
 	public Agencia(String nome){
 		this.nome = nome;
-		contas = new ArrayList<Conta>();
+		contas = new HashSet<Conta>();
+	}
+	
+	public Agencia(String nome, Banco banco){
+		this (nome);
+		this.banco = banco;
 	}
 
 	public Long getIdentificador() {
@@ -46,6 +51,29 @@ public class Agencia extends EntidadeBanco {
 
 	public void setContas(Collection<Conta> contas) {
 		this.contas = contas;
+	}
+	
+	@Override
+	public String toString(){
+		return getNome();
+	}
+	
+	@Override
+	public int hashCode(){
+		return getNome().hashCode();
+	}
+	
+	
+	@Override
+	public boolean equals(Object objeto){
+		boolean resultado = false;
+		if((objeto != null) && (objeto instanceof Agencia)){
+			Agencia a = (Agencia) objeto;
+			if(getNome().equals(a.getNome())){
+				resultado = true;
+			}
+		}
+		return resultado;
 	}
 	
 	

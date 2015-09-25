@@ -1,6 +1,6 @@
 package banco;
 
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa implements Comparable<Cliente> {
 
 	private String cpf;
 
@@ -51,6 +51,10 @@ public class Cliente extends Pessoa {
 	@Override
 	public String toString(){
 		return getNome();
+	}
+	
+	public int compareTo(Cliente o){
+		return getNome().compareTo(o.getNome());
 	}
 
 }
